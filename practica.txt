@@ -1,0 +1,24 @@
+Este es un nuevo archivo 
+Lo usare para practicar el guardado de git y para tomar apuntes sobre los codigos que aprenda
+
+____________________________________  COMANDOS DE GIT ____________________________________
+
+git init: Se usa para "iniciar" git en una carpeta y poder usar las todas las funciones y herramientas que dispone.
+
+git status: Para ver los cambios realizados en la carpeta (archivos creados o eliminados, lineas de codigo, etc).
+
+git add: Agrega todos los cambios realizados en la carpeta.
+    - git add . (Para guardar todos los archivos qeu cambiaron en la carpeta).
+    - git add archivo.extencion (Agrega solo los cambios del archivo especificado).
+
+git rm: Elimina el archivo especificado.
+    - git  rm --cached (Elimina lo que se tenga guardado del archivo en memoria).
+
+git commit: Agrega de manera "permanente" los cambios realisados al repositorio.
+    git commit -m "" (Es una buena practica agregarle un mensaje al commit en el que se describan los cambios realizados)
+
+git config: Para configurar git.
+    - --global user.name y user.email (para vincular el git a la cuenta de git).
+
+git log: Muestra toda la información de los cambios que se realizaron en toda la carpeta.
+    - Si se agrega el nombre del archivo se puede ver los cambios realizados al archivo especifico.
