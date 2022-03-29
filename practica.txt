@@ -20,5 +20,8 @@ git commit: Agrega de manera "permanente" los cambios realisados al repositorio.
 git config: Para configurar git.
     - --global user.name y user.email (para vincular el git a la cuenta de git).
 
-git log: Muestra toda la información de los cambios que se realizaron en toda la carpeta.
+git log: Muestra todo el historial de los cambios que se realizaron en el repositorio.
     - Si se agrega el nombre del archivo se puede ver los cambios realizados al archivo especifico.
+
+git show: Muestra la información detellada de todos lo cambios realizados en un archivo (identificacion, ruta, commit, comparacion de cambios).
+
