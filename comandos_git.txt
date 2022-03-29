@@ -1,6 +1,16 @@
 Este es un nuevo archivo 
 Lo usare para practicar el guardado de git y para tomar apuntes sobre los codigos que aprenda
 
+
+____________________________________ GLOSARIO ____________________________________
+
+Staging: Donde se guarda temporalmente los cambios realizados cuando se hace - git add -.
+
+Repositorio: Es el lugar donde se guardan "permanentemente" los cambios realizados y guardados con commit.
+    // Se guardan en la carpeta /.git/ que se creo cuando se inicio git con git init.
+
+
+
 ____________________________________  COMANDOS DE GIT ____________________________________
 
 git init: Se usa para "iniciar" git en una carpeta y poder usar las todas las funciones y herramientas que dispone.
@@ -28,4 +38,7 @@ git show: Muestra la información detellada de todos lo cambios realizados en un
 
 git diff: Compara los cambios realizados entre dos versiones diferentes de los archivos.
     // Se copian los dos id de los commit despues del diff.
+    // se coloca la version mas reciente primero.
+
+
 
