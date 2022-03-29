@@ -4,10 +4,24 @@ Lo usare para practicar el guardado de git y para tomar apuntes sobre los codigo
 
 ____________________________________ GLOSARIO ____________________________________
 
-Staging: Donde se guarda temporalmente los cambios realizados cuando se hace - git add -.
+Staging: Es un area de preparación, un lugar temporal que se tiene para guardar todas las pequeñas modificaciones
+antes de enviarlas al repositorio. 
+    // Los cambios que se realizan con git add.
 
-Repositorio: Es el lugar donde se guardan "permanentemente" los cambios realizados y guardados con commit.
+Repositorio: Es el lugar donde se guarda la versión final del archivo para que se pueda ver.
+    // Se guardan en el repositorio con los commit.
     // Se guardan en la carpeta /.git/ que se creo cuando se inicio git con git init.
+
+Directorio: Es la ruta en donde se tiene la carpeta con la que estamos trabajando.
+
+Untracked: Es el estado de un archivo cuando no ha sido rastreado, es decir, aun no se ha guardado en el staging.
+
+Tracked: Es el estado de un archivo cuando ha sido rastreado, es decir, cuando se ha guardado en el staging.
+
+Ramas: Son subversiones de la version principal en la cual se puede modificar la version principal para agregar, 
+solucionar, mejorar, etc. para despues hacer un merge o dejarlo como experimento.
+
+Merge: Cuando se unen los cambios de una rama con otra.
 
 
 
@@ -17,7 +31,7 @@ git init: Se usa para "iniciar" git en una carpeta y poder usar las todas las fu
 
 git status: Para ver los cambios realizados en la carpeta (archivos creados o eliminados, lineas de codigo, etc).
 
-git add: Agrega todos los cambios realizados en la carpeta.
+git add: Agrega todos los cambios realizados en la carpeta ded forma temporal.
     - git add . (Para guardar todos los archivos qeu cambiaron en la carpeta).
     - git add archivo.extencion (Agrega solo los cambios del archivo especificado).
 
