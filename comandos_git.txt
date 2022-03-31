@@ -101,6 +101,11 @@ git merge: De forma se puede fusionar los archivos que tengas en una rama difere
     todos los cambios a la rama principal. De estar parado en otra rama y hacer el merge a master la rama en la que estas parado 
     pasara a ser la principal
 
+git remote add origin "url del repositorio remoto": Para vincular el repositorio local al repositorio remoto.
+    - git remote -v (Muestra la url necesaria para hacer fetch y push).
+
+git push origin "nombre rama": Para enviar los cambios al repositorio remoto.
+
 ____________________________________ RESUMEN DE COMANDOS ________________________________
 
 _______________Comandos básicos de GitHub
