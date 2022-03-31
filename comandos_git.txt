@@ -1,0 +1,93 @@
+Este es un nuevo archivo 
+Lo usare para practicar el guardado de git y para tomar apuntes sobre los codigos que aprenda
+
+
+____________________________________ GLOSARIO ____________________________________
+
+Staging: Es un area de preparación, un lugar temporal que se tiene para guardar todas las pequeñas modificaciones
+antes de enviarlas al repositorio. 
+    // Los cambios que se realizan con git add.
+
+Repositorio: Es el lugar donde se guarda la versión final del archivo para que se pueda ver.
+    // Se guardan en el repositorio con los commit.
+    // Se guardan en la carpeta /.git/ que se creo cuando se inicio git con git init.
+
+Directorio: Es la ruta en donde se tiene la carpeta con la que estamos trabajando.
+
+Untracked: Es el estado de un archivo cuando no ha sido rastreado, es decir, aun no se ha guardado en el staging.
+
+Tracked: Es el estado de un archivo cuando ha sido rastreado, es decir, cuando se ha guardado en el staging.
+
+Ramas o Branch: Son subversiones de la version principal en la cual se puede modificar la version principal para agregar, 
+solucionar, mejorar, etc. para despues hacer un merge o dejarlo como experimento.
+
+Merge: Cuando se unen los cambios de una rama con otra.
+
+Repositorio remoto: Es un lugar virtual donde puedo guardar mis cambio realizados y guardados en git para que cualquier persona 
+con la url pueda verlo.
+    - GitHub
+    - GitLab
+    - Etc...
+
+Master: La rama primcipal donde se guardan todos los cambios significativos del repositorio.
+
+Head: Rama Usada para ir guardando los cambios en staging antes de der enviados a la rama master.
+____________________________________  COMANDOS DE GIT ____________________________________
+
+git init: Se usa para "iniciar" git en una carpeta y poder usar las todas las funciones y herramientas que dispone.
+
+git status: Para ver los cambios realizados en la carpeta (archivos creados o eliminados, lineas de codigo, etc).
+
+git add: Agrega todos los cambios realizados en la carpeta ded forma temporal.
+    - git add . (Para guardar todos los archivos qeu cambiaron en la carpeta).
+    - git add archivo.extencion (Agrega solo los cambios del archivo especificado).
+
+git rm: Elimina el archivo especificado.
+    - git  rm --cached (Elimina lo que se tenga guardado del archivo en memoria).
+
+git commit: Agrega de manera "permanente" los cambios realisados al repositorio.
+    git commit -m "" (Es una buena practica agregarle un mensaje al commit en el que se describan los cambios realizados)
+
+git config: Para configurar git.
+    - --global user.name y user.email (para vincular el git a la cuenta de git).
+
+git log: Muestra todo el historial de los cambios que se realizaron en el repositorio.
+    // Si se agrega el nombre del archivo se puede ver los cambios realizados al archivo especifico.
+    - --stat (Ademas de mostrar el historial de cambios, muestra los detalles de los cambios realizados)
+
+git show: Muestra la información detellada de todos lo cambios realizados en un archivo 
+    // Se puede ver información como: identificacion, ruta, commit, comparacion de cambios.
+
+git diff: Compara los cambios realizados entre dos versiones diferentes de los archivos.
+    // Se copian los dos id de los commit despues del diff.
+    // se coloca la version mas reciente primero.
+
+git checkout: Devuelve un archivo a una version anterior.
+    // Se copia el id del commit al cual se quiere regresar y sesuido de un espacio el archivo al cual se quiere aplicar los cambios.
+    // LOS CAMBIOS QUEDAN EN STAGING SE PUEDE REGRESAR CON RM O USANDO -master- EN VEZ DEL ID. 
+    (master devuelve el archivo a la ultima version guardada)
+
+git reset: Permite volver a versiones anteriores pero a diferencia del checkout elimina el historial impidiendo la posiblidad
+de regresar a la version en la que se estaba.
+    // ESTE ES UN COMANDO MUY PELIGROSO QUE SOLO DEBE USARSE EN EMERGENCIAS.
+    - --soft (Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos 
+    aplicar las últimas actualizaciones a un nuevo commit.)
+    - --hard (Borra todo. Toda la información de los commits y del área de staging se borra del historial.)
+    - HEAD (Este es el comando para sacar archivos del área de staging. No para borrarlos sino para que 
+    los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos 
+    de nuevo en staging con -git add-).
+
+
+__________________ COMANDOS GIT PARA EL REPOSITORIO REMOTO 
+
+git clone: Para guardar los cambios en un repositorio remoto.
+    // se coloca la url del repositorio remoto despues del comando.
+
+git push: Envia los commit al repositorio remoto.
+
+git fetch: Copia la version mas actualizada en el repositorio remoto al repositorio local.
+
+git merge: Copia la version qdel -git fetch- en el directorio de trabajo.
+
+git pull: Junta lo que hace el comando -git fetch- y -git merge-.
+
