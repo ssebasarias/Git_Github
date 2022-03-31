@@ -46,6 +46,7 @@ git config: Para configurar git.
 
 git log: Muestra todo el historial de los cambios que se realizaron en el repositorio.
     // Si se agrega el nombre del archivo se puede ver los cambios realizados al archivo especifico.
+    - --stat (Ademas de mostrar el historial de cambios, muestra los detalles de los cambios realizados)
 
 git show: Muestra la información detellada de todos lo cambios realizados en un archivo 
     // Se puede ver información como: identificacion, ruta, commit, comparacion de cambios.
@@ -54,5 +55,18 @@ git diff: Compara los cambios realizados entre dos versiones diferentes de los a
     // Se copian los dos id de los commit despues del diff.
     // se coloca la version mas reciente primero.
 
+git checkout: Devuelve un archivo a una version anterior.
+    // Se copia el id del commit al cual se quiere regresar y sesuido de un espacio el archivo al cual se quiere aplicar los cambios.
+    // LOS CAMBIOS QUEDAN EN STAGING SE PUEDE REGRESAR CON RM O USANDO -master- EN VEZ DEL ID. 
+    (master devuelve el archivo a la ultima version guardada)
 
+git reset: Permite volver a versiones anteriores pero a diferencia del checkout elimina el historial impidiendo la posiblidad
+de regresar a la version en la que se estaba.
+    // ESTE ES UN COMANDO MUY PELIGROSO QUE SOLO DEBE USARSE EN EMERGENCIAS.
+    - --soft (Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos 
+    aplicar las últimas actualizaciones a un nuevo commit.)
+    - --hard (Borra todo. Toda la información de los commits y del área de staging se borra del historial.)
+    - HEAD (Este es el comando para sacar archivos del área de staging. No para borrarlos sino para que 
+    los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos 
+    de nuevo en staging con -git add-).
 
