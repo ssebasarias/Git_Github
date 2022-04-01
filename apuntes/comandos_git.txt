@@ -30,8 +30,16 @@ con la url pueda verlo.
     - Etc...
 
 Master: La rama primcipal donde se guardan todos los cambios significativos del repositorio.
+    // La nueva version cambio esta palabra y ahora se llama MAIN.
 
 Head: Rama Usada para ir guardando los cambios en staging antes de der enviados a la rama master.
+
+Llave publica: Clave digital con la cual se puede enviar un mensaje de forma segura para que solo el remitente pueda 
+desencriptar el mensaje.
+    // Lo puede tener cualquier persona.
+
+Llave privada: Clave digital con la cual se puede desencriptar el mensaje de la llave publica.
+    // SOLO LA PUEDES TENER TÚ.
 
 
 ____________________________________  COMANDOS DE GIT ____________________________________
@@ -81,20 +89,72 @@ de regresar a la version en la que se estaba.
     los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos 
     de nuevo en staging con -git add-).
 
+________________________
+SSH o Secure Shell: Es un protocolo de red que permite acceso remoto seguro a través de una conexión encriptada. Este método de autenticación requiere un passphrase (contraseña) o tambien puede funcionar sin passphrase sobre la clave.
+.
+En el directorio Home ~
+
+$ git config -l: Muestra la configuración dentro de Git(user y email), Este comando funciona por que Git esta instalado en todo el equipo local.
+.
+$ git config --global user.email “nombre_email_cambiado” : Se puede utilizar este mismo comando para cambiar el email.
+.
+
+Creamos la llave SSH
+
+$ ssh-keygen -t rsa -b 4096 -C "tu_email@gmail.com"
+    -t = Especifica cual es el algoritmo que vamos a usar para crear esa llave.
+    rsa = Algoritmo a usar, hasta el momento el mas popular.
+    -b = Especifica que tan compleja es la llave.
+    4096 = Complejidad de la llave desde una perspectiva matemática.
+    -C = Indica a que correo electrónico va estar conectado esta llave
+    "tu_email@gmail.com" = Correo electrónico.
+.
+Dato: Guardar la llave en la dirección predeterminada.
+Dato2: Passphrase: Password con espacios o Contraseña adicional de texto que le vas a poner a tu llave pública y privada.
+.
+1er Paso:
+    Una ves que tengamos la llave, tenemos que agregarlo al entorno, y el entorno es básicamente que el sistema operativo donde tu trabajas sepa que 
+    la llave existe. Para ello ejecutamos lo sgte:
+.
+
+revisar el servidor de llaves / Evalúa que un comando se dispare.
+
+$ eval $(ssh-agent -s)
+    // Resultado: Dato: Agent pid 4724
+
+    Agent = Significa que el servidor de SHH esta corriendo.
+    pid = Process id o identificador del proceso.
+    4724 = Número que al sistema operativo le dice que el proceso esta corriendo.
+.
+
+2do Paso:
+Agregamos la llave privada a nuestro sistema o al servidor por que no basta con que la llave solo exista, sino debemos decirle que existe. 
+Para ello ejecutamos el siguiente comando:
+
+$ ssh-add ~/.ssh/id_rsa
+    ~ = Home
+    .ssh = carpeta ssh
+    id_rsa = llave privada la que nunca debemos de mostrar.
+________________________
+
 __________________ COMANDOS GIT PARA EL REPOSITORIO REMOTO 
 
 git clone: Para guardar los cambios en un repositorio remoto.
     // se coloca la url del repositorio remoto despues del comando.
 
 git push: Envia los commit al repositorio remoto.
+    - git push origin master:main (Envia todo lo del master a main para subirlo al remoto)
 
 git fetch: Copia la version mas actualizada en el repositorio remoto al repositorio local.
 
 git merge: Copia la version qdel -git fetch- en el directorio de trabajo.
 
 git pull: Junta lo que hace el comando -git fetch- y -git merge-.
+    - git pull origin main --allow-unrelated-histories (De esta forma se puede solucionar el problema al momento de subir los 
+    cambios de varias ramas).
 
 git branch: Para vrear una nueva rama.
+    - git branch -M main (Para pasar toda la informacion que se tenga en la rama master a la rama principal main).
 
 git merge: De forma se puede fusionar los archivos que tengas en una rama diferente al master.
     // Para fusionar a la rama master se tiene que estar parado en master y hacer el -git merge nombreRama- para agregar
