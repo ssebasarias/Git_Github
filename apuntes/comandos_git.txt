@@ -163,8 +163,10 @@ git merge: De forma se puede fusionar los archivos que tengas en una rama difere
 
 git remote add origin "url del repositorio remoto": Para vincular el repositorio local al repositorio remoto.
     - git remote -v (Muestra la url necesaria para hacer fetch y push).
+    -  set-url origin urlSSH (Para cambiar la url del repositorio a una llave SSH segura)
 
 git push origin "nombre rama": Para enviar los cambios al repositorio remoto.
+    
 
 ____________________________________ RESUMEN DE COMANDOS ________________________________
 
