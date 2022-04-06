@@ -64,6 +64,10 @@ git config: Para configurar git.
 git log: Muestra todo el historial de los cambios que se realizaron en el repositorio.
     // Si se agrega el nombre del archivo se puede ver los cambios realizados al archivo especifico.
     - --stat (Ademas de mostrar el historial de cambios, muestra los detalles de los cambios realizados)
+    - --all --graph --decorate (Muestra de manera mas grafica los cambios realizados en cada rama, 
+    si ademas se agrega --oneline lo muestra de manera mas comprimida).
+        // USANDO -alias- SE PUEDE RESUMIR TODO ESTE COMANDO A FORMA DE VARIABLE DANDOLE UN NOMBRE:
+            SYBTAXIS: alias nombreVariable="git log --all --graph --decorate --oneline"
 
 git show: Muestra la información detellada de todos lo cambios realizados en un archivo 
     // Se puede ver información como: identificacion, ruta, commit, comparacion de cambios.
@@ -88,6 +92,18 @@ de regresar a la version en la que se estaba.
     - HEAD (Este es el comando para sacar archivos del área de staging. No para borrarlos sino para que 
     los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos 
     de nuevo en staging con -git add-).
+
+git tag: Muestra la lista de tags que se crearon en el repositorio.
+    - git tag -a nombreVersion -m "mensaje" idDelCommit (Sintaxis para crear un tag).
+    // -a = Para agregarlo
+    // nombreVersion= es buena practica usar nombres comom v0.1
+    // -m "" = Para crear un mensaje a forma de commit"
+    - git show-ref --tags ( de esta forma se puede ver el id del commit al que llevan los tags)
+    - git tag -d nombre (Así se borran los tags).
+    Para borrarlo tambien de Github se usa - git push origin :refs/tags/nombre o desde la interfaz.
+
+
+
 
 ________________________
 SSH o Secure Shell: Es un protocolo de red que permite acceso remoto seguro a través de una conexión encriptada. Este método de autenticación requiere un passphrase (contraseña) o tambien puede funcionar sin passphrase sobre la clave.

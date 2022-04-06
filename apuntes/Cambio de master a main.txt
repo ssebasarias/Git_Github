@@ -1,0 +1,25 @@
+El movimiento de #BlackLivesMatter ha ayudado a que GitHub sustituya algunas palabras usadas en su plataforma con relación al racismo.
+
+Palabras como master, whitelist, blacklist y slave se encuentran en este proceso de cambio. Pero el más importante en ese momento y que ya ha empezado a tener efecto es que la rama master ahora se llamará main.
+
+Como ya has aprendido en el Curso de Git y GitHub nuestra rama principal y a la que apunta nuestro proyecto es Master.
+
+git.png
+git2.png
+
+
+Master a Main
+A partir del primero de octubre todos los repositorios nuevos que se creen empezarán a mostrar main como rama principal y tendrán que hacer sus comandos respectivos allí.
+
+Los repositorios existentes seguirán usando master como rama principal, porque hacer el cambio de nombre en este momento puede generar muchos conflictos para esos proyectos. Microsoft promete que para final de año, este cambio sea más fácil de aplicar para proyectos existentes.
+
+También se agrega un paso adicional, al momento de crear un repositorio desde la línea de comandos. Como vemos en las imágenes ahora debemos hacer:
+
+
+--------- git branch -M main ----------------
+
+
+Sabemos que git branch nos ayuda a crear una nueva rama dentro de nuestro repositorio y -M nos ayudará a mover todo el historial que tengamos (en caso de que los haya) en master a la nueva rama que estamos creando que se llama main
+
+
+link de la documentacion: https://platzi.com/blog/cambios-en-github-master-main/
